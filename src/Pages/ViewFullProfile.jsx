@@ -4,6 +4,7 @@ import { PiPhoneCall } from "react-icons/pi";
 import { useLocation, useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import BackButton from "../Components/BackButton";
 
 const ViewFullProfile = () => {
   useEffect(() => {
@@ -86,12 +87,13 @@ const ViewFullProfile = () => {
           <div data-aos="fade-zoom-in"
              data-aos-easing="ease-in-back"
              data-aos-delay="30000"
-             data-aos-offset="0" className="mt-10 flex justify-center">
+             data-aos-offset="0" className="mt-10 flex gap-5 justify-center">
+            <BackButton/>
             <button
              
               onClick={() => {
                 console.log("Navigating with state:", { firstname, lastname, services });
-                navigate("/bookappointment", {
+                navigate("/book-appointment", {
                   state: { firstname, lastname, services },
                 });
               }}

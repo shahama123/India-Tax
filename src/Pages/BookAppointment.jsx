@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import image from "../assets/Hotel Booking.gif";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import BackButton from "../Components/BackButton";
 
 const BookAppointment = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const BookAppointment = () => {
       icon: "success",
       confirmButtonText: "OK",
     }).then(() => {
-      navigate("/confirmationpage", {
+      navigate("/confirmation-page", {
         state: {
           firstname,
           lastname,
@@ -76,7 +77,7 @@ const BookAppointment = () => {
           data-aos-easing="ease-in-back"
           data-aos-delay="100"
           data-aos-offset="0"
-          className="text-3xl font-bold text-center text-[#008080] mb-6"
+          className="text-3xl font-bold text-center text-black mb-6"
         >
           Book an Appointment
         </h3>
@@ -230,8 +231,11 @@ const BookAppointment = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="mt-1 w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                      className="mt-1  p-3 border rounded-lg w-[30rem] shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
                     >
+                      <option value="" disabled>
+                        Select Service
+                      </option>
                       {services && services.length > 0 ? (
                         services.map((service, index) => (
                           <option key={index} value={service}>
@@ -239,7 +243,9 @@ const BookAppointment = () => {
                           </option>
                         ))
                       ) : (
-                        <option value="">No services available</option>
+                        <option value="" disabled>
+                          No services available
+                        </option>
                       )}
                     </select>
                   </div>
@@ -269,14 +275,15 @@ const BookAppointment = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex gap-5 pt-7 justify-center">
+                  <BackButton/>
                   <button
                     data-aos="fade-zoom-in"
                     data-aos-easing="ease-in-back"
                     data-aos-delay="400"
                     data-aos-offset="0"
                     type="submit"
-                    className="py-4 bg-[#7fb2dc] px-9 text-white font-semibold rounded-lg shadow-lg hover:border-[#7fb2dc]  hover-bg-[#3bccec] focus:ring-2 focus:ring-blue-400 focus:outline-none transition-transform transform hover:scale-105"
+                    className="py-4 bg-[#7fb2dc]  text-white  hover:bg-white border hover:border-[#7fb2dc]  hover:text-[#7fb2dc] transition duration-300  px-9  font-semibold rounded-lg shadow-lg  focus:ring-2 focus:ring-blue-400 focus:outline-none  transform "
                   >
                     Confirm Appointment
                   </button>

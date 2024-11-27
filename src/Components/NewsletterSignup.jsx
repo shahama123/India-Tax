@@ -77,7 +77,7 @@ const NewsletterSignup = () => {
           />
           <button
             type="submit"
-            className="bg-[#7fb2dc] text-white py-2 px-6 rounded-lg  hover:bg-[#78baf0] transition duration-300"
+            className="bg-[#7fb2dc] text-white  hover:bg-white border hover:border-[#7fb2dc]  hover:text-[#7fb2dc] transition duration-300  py-2 px-6 rounded-lg"
             data-aos="fade-up"
             data-aos-delay="800"
           >

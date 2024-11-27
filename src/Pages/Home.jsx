@@ -30,14 +30,8 @@ const Home = () => {
       <div className="py-10">
         <div className="mx-32">
           <div data-aos="zoom-in">
-            <h1 className="text-3xl my-16">
-              <Title
-                text1={"Our"}
-                text2={"Services"}
-                description={
-                  "We provide GST filing software for accurate GST filing, reconciliation, and claiming ITC."
-                }
-              />
+            <h1 className="text-center font-semibold text-4xl my-16">
+              Our Services
             </h1>
           </div>
 
@@ -64,7 +58,7 @@ const Home = () => {
             className="flex justify-center pt-10 pb-10"
           >
             <button
-              onClick={() => navigation("/allservices")}
+              onClick={() => navigation("/all-services")}
               className="mt-4 hover:bg-[#a18263] text-[#9c6254] py-3 px-6 bg-white border border-[#9c6254] hover:text-white focus:outline-none transition duration-300"
             >
               Explore More Services

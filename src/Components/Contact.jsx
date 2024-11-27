@@ -29,7 +29,7 @@ const Contact = () => {
     </p>
     <NavLink to={"/contactus"}>
       <div className="pt-5">
-        <button className="bg-[#7fb2dc] px-5 py-2 text-black rounded border     transition-transform transform hover:scale-105">
+        <button className="bg-[#7fb2dc] text-white  hover:bg-white  hover:border-[#7fb2dc]  hover:text-[#7fb2dc]  duration-300 px-5 py-2  rounded border  transition-transform transform ">
           Contact Us
         </button>
       </div>

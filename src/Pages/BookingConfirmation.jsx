@@ -38,7 +38,7 @@ const BookingConfirmation = () => {
           data-aos-easing="ease-in-back"
           data-aos-delay="300"
           data-aos-offset="0"
-          className="text-3xl font-bold text-center mt-5 text-[#008080] mb-6"
+          className="text-3xl font-bold text-center mt-5 text-black mb-6"
         >
           Booking Confirmed!
         </h3>
@@ -82,7 +82,7 @@ const BookingConfirmation = () => {
             data-aos-delay="700"
             data-aos-offset="0"
             onClick={() => navigate("/")}
-            className="bg-[#7fb2dc] px-6 py-3 text-white font-semibold rounded-lg shadow-lghover:border-[#3bccec] hover:bg-[#3bccec] focus:ring-2 focus:ring-blue-400 focus:outline-none transition-transform transform hover:scale-105"
+            className="bg-[#7fb2dc] px-6 py-3 text-white    hover:bg-white border hover:border-[#7fb2dc]  hover:text-[#7fb2dc] transition duration-300  font-semibold rounded-lg shadow-lghover:border-[#3bccec]  focus:ring-2 focus:ring-blue-400 focus:outline-none  transform "
           >
             Go to Homepage
           </button>

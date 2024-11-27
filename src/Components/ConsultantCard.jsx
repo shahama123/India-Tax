@@ -16,7 +16,7 @@ const ConsultantCard = ({
   const navigate = useNavigate();
 
   const handleViewFullProfile = () => {
-    navigate(`/viewfullprofile/${id}`, {
+    navigate(`/view-full-profile/${id}`, {
       state: {
         id,
         firstname,
@@ -32,7 +32,7 @@ const ConsultantCard = ({
     });
   };
   const handleBookAppointment = () => {
-    navigate(`/bookappointment`, {
+    navigate(`/book-appointment`, {
       state: {
         firstname,
         lastname,

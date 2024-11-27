@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const Register = () => {
   useEffect(() => {
     Aos.init({
-      duration: 1000,
+      duration: 800,
       once: false,
       easing: "ease-in-out",
     });
@@ -26,55 +26,78 @@ const Register = () => {
   const [district, setDistrict] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
+  const [otp, setOtp] = useState("");
+  const [generatedOtp, setGeneratedOtp] = useState("");
+
 
   const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
 
+  const generateOtp = () => {
+    const randomOtp = Math.floor(1000 + Math.random() * 9000).toString();
+    setGeneratedOtp(randomOtp);
+    Swal.fire({
+      title: "OTP Sent!",
+      text: `Your OTP is ${randomOtp} (for demo purposes).`,
+      icon: "info",
+      confirmButtonText: "OK",
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    Swal.fire({
-      title: "Registration Successful!",
-      text: "You have been registered successfully.",
-      icon: "success",
-      confirmButtonText: "OK",
-    }).then(() => {
-      setFirstName("");
-      setSecondName("");
-      setEmail("");
-      setMobileNumber("");
-      setGender("");
-      setHouseName("");
-      setStreetName("");
-      setLocality("");
-      setPinCode("");
-      setDistrict("");
-      setState("");
-      setCountry("");
-    });
+    if (otp === generatedOtp) {
+      Swal.fire({
+        title: "Registration Successful!",
+        text: "You have been registered successfully.",
+        icon: "success",
+        confirmButtonText: "OK",
+      }).then(() => {
+        setFirstName("");
+        setSecondName("");
+        setEmail("");
+        setMobileNumber("");
+        setGender("");
+        setHouseName("");
+        setStreetName("");
+        setLocality("");
+        setPinCode("");
+        setDistrict("");
+        setState("");
+        setCountry("");
+        setOtp("");
+        setGeneratedOtp("");
+      });
+    } else {
+      Swal.fire({
+        title: "Invalid OTP",
+        text: "The OTP you entered is incorrect. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
   };
 
   return (
     <div>
-      <div>
+      <div className="mx-32 my-20">
         <h1
           data-aos="zoom-in"
-          className="text-4xl text-center font-bold py-10 text-black"
+          className="text-4xl text-center font-bold  text-black"
         >
-          Registration Page
+          Register
         </h1>
       </div>
-      <div className="flex justify-center gap-20 items-center ">
+      <div className="flex justify-center gap-20  ">
         <div
           data-aos="fade-zoom-in"
           data-aos-easing="ease-in-back"
-          data-aos-delay="400"
           data-aos-offset="0"
         >
-          <img src={image} alt="" />
+          <img src={image}  alt="" />
         </div>
-        <div className="my-10">
+        <div className="">
           <form className="grid grid-cols-2 gap-5" onSubmit={handleSubmit}>
             <div>
               <label
@@ -302,7 +325,7 @@ const Register = () => {
             <button
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
-              data-aos-delay="1300"
+              data-aos-delay=""
               data-aos-offset="0"
               type="submit"
               className="bg-[#7fb2dc] hover:bg-white border hover:border-[#7fb2dc] text-white hover:text-[#7fb2dc] px-10 py-3 rounded"
@@ -317,7 +340,7 @@ const Register = () => {
         <div
           data-aos="fade-zoom-in"
           data-aos-easing="ease-in-back"
-          data-aos-delay="1500"
+          data-aos-delay="100"
           data-aos-offset="0"
           className="bg-gray-200 text-center py-10 space-y-2 "
         >

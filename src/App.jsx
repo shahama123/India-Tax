@@ -16,6 +16,7 @@ import Register from "./Pages/Register";
 import AllServices from "./Pages/AllServices";
 import SelectedService from "./Pages/SelectedService";
 import JobDetails from "./Pages/JobDetails";
+import ScrollToTop from "./Components/ScrollToTop ";
 
 function App() {
   
@@ -39,22 +40,22 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+      <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/" element={<Home />} />
           <Route path="/services/:id" element={<Services />} />
-          <Route path="/allservices" element={<AllServices />} />
-          {/* <Route path='/consultant' element={<Consultant/>}/> */}
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/consultantlist" element={<ConsultantList />} />
-          <Route path="/bookappointment" element={<BookAppointment />} />
-          <Route path="/viewfullprofile/:id" element={<ViewFullProfile />} />
-          <Route path="/confirmationpage" element={<BookingConfirmation />} />
+          <Route path="/all-services" element={<AllServices />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/consultant-list" element={<ConsultantList />} />
+          <Route path="/book-appointment" element={<BookAppointment />} />
+          <Route path="/view-full-profile/:id" element={<ViewFullProfile />} />
+          <Route path="/confirmation-page" element={<BookingConfirmation />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/selectedservice" element={<SelectedService />} />
+          <Route path="/selected-service" element={<SelectedService />} />
           <Route
             path="/job-details/:index"
             element={<JobDetails jobListings={jobListings} />}

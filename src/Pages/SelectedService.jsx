@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import image from "../assets/Customer-relationship-management.gif";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import BackButton from "../Components/BackButton";
 
 const SelectedService = () => {
   useEffect(() => {
@@ -55,11 +56,11 @@ const SelectedService = () => {
             <div className="mt-4 space-y-6">
               <div className="space-y-2">
                 <p className="text-lg text-gray-800 font-semibold">
-                  <span className="text-[#00b6dd]">Price:</span> Contact for
+                  <span className="text-[#7fb2dc]">Price:</span> Contact for
                   details
                 </p>
                 <p className="text-lg text-gray-800 font-semibold">
-                  <span className="text-[#00b6dd]">Duration:</span> Varies based
+                  <span className="text-[#7fb2dc]">Duration:</span> Varies based
                   on application
                 </p>
               </div>
@@ -69,7 +70,7 @@ const SelectedService = () => {
 
         <div className="mt-4 space-y-8">
           <div data-aos="fade-up">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Who Can Register?</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">Who Can Register?</h3>
             <p className="text-gray-600">
               Anyone earning taxable income or conducting business activities
               is required to register. Ensure your compliance today!
@@ -77,7 +78,7 @@ const SelectedService = () => {
           </div>
 
           <div data-aos="fade-up" className="space-y-2">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
               Documents Needed for Registration
             </h3>
 
@@ -94,7 +95,7 @@ const SelectedService = () => {
           </div>
 
           <div data-aos="fade-up">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Steps to Register</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">Steps to Register</h3>
             <ol className="list-decimal list-inside text-gray-600 space-y-2">
               <li>Create an account on the tax portal.</li>
               <li>Fill out the online registration form.</li>
@@ -106,13 +107,13 @@ const SelectedService = () => {
               Follow these five simple steps to complete your taxpayer
               registration. Click here to start your application now!
             </p>
-            <button className="mt-4 py-2 px-6 bg-[#00b6dd] text-white rounded">
+            <button className="mt-4 py-2 px-6 bg-[#7fb2dc] text-white  hover:bg-white border hover:border-[#7fb2dc]  hover:text-[#7fb2dc] transition duration-300  rounded">
               Register
             </button>
           </div>
 
           <div data-aos="fade-up">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
               Key Points to Remember
             </h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -125,7 +126,7 @@ const SelectedService = () => {
           </div>
 
           <div data-aos="fade-up">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
               Frequently Asked Questions
             </h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -143,10 +144,10 @@ const SelectedService = () => {
         >
           <div className="space-y-2">
             <div className="flex justify-center">
-              <MdSupportAgent className="text-5xl text-center text-[#00b6dd]" />
+              <MdSupportAgent className="text-5xl text-center text-[#008080]" />
             </div>
 
-            <h1 className="text-center text-3xl text-[#00b6dd]">Need Help?</h1>
+            <h1 className="text-center text-3xl text-[#008080]">Need Help?</h1>
 
             <p className="text-gray-600 text-center">
               Contact our customer support team if you have any further
@@ -165,6 +166,9 @@ const SelectedService = () => {
             </div>
           </div>
         </div>
+        <div className="flex justify-start  mt-10">
+        <BackButton/>
+      </div>
       </div>
     </div>
   );

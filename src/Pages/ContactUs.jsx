@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import image from "../assets/Contact us.gif";
-import { IoLocation, IoPhoneLandscape } from "react-icons/io5";
+import { IoLocation } from "react-icons/io5";
 import { MdSupportAgent } from "react-icons/md";
 import "aos/dist/aos.css";
 import Aos from "aos";
@@ -120,7 +120,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="bg-gray-200 pb-20 pt-16">
-        <h1 data-aos="zoom-out-down" className="text-center mb-16 text-2xl font-semibold">
+        <h1 data-aos="zoom-out-down" className="text-center mb-16 text-3xl font-semibold">
           We'd Love to Hear From You!
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-16 px-6 lg:px-64">

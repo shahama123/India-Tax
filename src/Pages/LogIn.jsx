@@ -24,18 +24,20 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
 
-  // Clear form whenever the component is mounted or navigated to
   useEffect(() => {
     setName("");
     setEmail("");
     setPassword("");
     setError("");
+    setIsForgotPassword(false); 
   }, [location.pathname]);
 
   const toggleForm = () => {
     setCurrentState(currentState === "Log In" ? "Sign Up" : "Log In");
     setError("");
+    setIsForgotPassword(false); 
   };
 
   const handleSubmit = (e) => {
@@ -65,6 +67,27 @@ const LogIn = () => {
     });
   };
 
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      setError("Please enter your email address.");
+      return;
+    }
+
+    setError("");
+
+    Swal.fire({
+      title: "Password Reset Link Sent!",
+      text: "Please check your email to reset your password.",
+      icon: "info",
+      confirmButtonText: "OK",
+    }).then(() => {
+      setEmail("");
+      setIsForgotPassword(false); 
+    });
+  };
+
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
@@ -82,115 +105,148 @@ const LogIn = () => {
 
         <div className="w-full lg:w-1/2 p-8 flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-gray-800 text-center">
-            {currentState}
+            {isForgotPassword ? "Forgot Password" : currentState}
           </h2>
 
           {error && <p className="text-red-500 text-center">{error}</p>}
 
-          <form className="space-y-6 mt-6" onSubmit={handleSubmit}>
-            {currentState === "Sign Up" && (
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg  text-gray-700"
-                />
-              </div>
-            )}
-
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg  text-gray-700"
-              />
-            </div>
-
-            <div className="relative flex items-center border-2 border-gray-300 rounded-lg">
-              <input
-                type={passwordVisible ? "text" : "password"}
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 focus:outline-none  text-gray-700"
-              />
-              <span
-                className="pr-4 text-gray-400 cursor-pointer"
-                onClick={togglePasswordVisibility}
-              >
-                {passwordVisible ? <FaEyeSlash /> : <FaEye />}
-              </span>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  className="mr-2 focus:ring-blue-500"
-                />
-                <label htmlFor="remember" className="text-sm text-gray-600">
-                  Remember me
-                </label>
-              </div>
-              <a href="#" className="text-sm text-blue-500 hover:underline">
-                Forgot password?
-              </a>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-[#7fb2dc] text-white py-3 rounded-lg font-medium hover:scale-105 transition duration-300"
-            >
-              {currentState === "Log In" ? "Log In" : "Sign Up"}
-            </button>
-          </form>
-
-          <div className="flex items-center my-6">
-            <div className="flex-grow border-t"></div>
-            <span className="mx-4 text-gray-500">Or login with</span>
-            <div className="flex-grow border-t"></div>
-          </div>
-
-          <div className="flex justify-center space-x-4">
-            <button className="p-3 bg-blue-700 text-white rounded-full">
-              <FaFacebookF />
-            </button>
-            <button className="p-3 bg-blue-400 text-white rounded-full">
-              <FaTwitter />
-            </button>
-            <button className="p-3 bg-red-500 text-white rounded-full">
-              <FaGoogle />
-            </button>
-          </div>
-
-          <p className="text-center mt-6 text-sm">
-            {currentState === "Log In" ? (
+          <form
+            className="space-y-6 mt-6"
+            onSubmit={isForgotPassword ? handleForgotPassword : handleSubmit}
+          >
+            {isForgotPassword ? (
               <>
-                Don’t have an account?{" "}
+                <div className="relative">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-gray-700"
+                  />
+                </div>
                 <button
-                  onClick={toggleForm}
-                  className="text-blue-500 hover:underline focus:outline-none"
+                  type="submit"
+                  className="w-full bg-[#7fb2dc] text-white py-3 rounded-lg font-medium hover:scale-105 transition duration-300"
                 >
-                  Sign Up
+                  Send Reset Link
                 </button>
               </>
             ) : (
               <>
-                Already have an account?{" "}
+                {currentState === "Sign Up" && (
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-gray-700"
+                    />
+                  </div>
+                )}
+
+                <div className="relative">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-gray-700"
+                  />
+                </div>
+
+                <div className="relative flex items-center border-2 border-gray-300 rounded-lg">
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full px-4 py-3 focus:outline-none text-gray-700"
+                  />
+                  <span
+                    className="pr-4 text-gray-400 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      className="mr-2 focus:ring-blue-500"
+                    />
+                    <label htmlFor="remember" className="text-sm text-gray-600">
+                      Remember me
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setIsForgotPassword(true)}
+                    className="text-sm text-blue-500 hover:underline"
+                  >
+                    Forgot password?
+                  </button>
+                </div>
+
                 <button
-                  onClick={toggleForm}
-                  className="text-blue-500 hover:underline focus:outline-none"
+                  type="submit"
+                  className="w-full bg-[#7fb2dc] text-white py-3 rounded-lg font-medium hover:scale-105 transition duration-300"
                 >
-                  Log In
+                  {currentState === "Log In" ? "Log In" : "Sign Up"}
                 </button>
               </>
             )}
-          </p>
+          </form>
+
+          {!isForgotPassword && (
+            <>
+              <div className="flex items-center my-6">
+                <div className="flex-grow border-t"></div>
+                <span className="mx-4 text-gray-500">Or login with</span>
+                <div className="flex-grow border-t"></div>
+              </div>
+
+              <div className="flex justify-center space-x-4">
+                <button className="p-3 bg-blue-700 text-white rounded-full">
+                  <FaFacebookF />
+                </button>
+                <button className="p-3 bg-blue-400 text-white rounded-full">
+                  <FaTwitter />
+                </button>
+                <button className="p-3 bg-red-500 text-white rounded-full">
+                  <FaGoogle />
+                </button>
+              </div>
+
+              <p className="text-center mt-6 text-sm">
+                {currentState === "Log In" ? (
+                  <>
+                    Don’t have an account?{" "}
+                    <button
+                      onClick={toggleForm}
+                      className="text-blue-500 hover:underline focus:outline-none"
+                    >
+                      Sign Up
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    Already have an account?{" "}
+                    <button
+                      onClick={toggleForm}
+                      className="text-blue-500 hover:underline focus:outline-none"
+                    >
+                      Log In
+                    </button>
+                  </>
+                )}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>

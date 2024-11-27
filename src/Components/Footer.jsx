@@ -12,6 +12,7 @@ import {
   FaMailBulk,
 } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const Footer = () => {
         data-aos="fade-up"
       >
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-28">
-          <div className="space-y-3 lg:space-y-4" data-aos="fade-right">
+          <div className="space-y-3 lg:space-y-3" data-aos="fade-right">
             <img
               src={assets.logo}
               alt="logo"
@@ -48,48 +49,53 @@ const Footer = () => {
             </p>
             <div className="flex gap-3 justify-center lg:justify-start text-white mt-2">
               <p className="bg-slate-600 hover:bg-slate-500 px-3 py-3 rounded-full transition duration-300">
-                <FaInstagram />
+                <a href="/"><FaInstagram /></a>
               </p>
               <p className="bg-slate-600 hover:bg-slate-500 px-3 py-3 rounded-full transition duration-300">
-                <FaFacebookF />
+                <a href="/"><FaFacebookF /></a>
               </p>
               <p className="bg-slate-600 hover:bg-slate-500 px-3 py-3 rounded-full transition duration-300">
-                <FaTwitter />
+                <a href="/"><FaTwitter /></a>
               </p>
               <p className="bg-slate-600 hover:bg-slate-500 px-3 py-3 rounded-full transition duration-300">
-                <FaLinkedin />
+                <a href=""><FaLinkedin /></a>
               </p>
             </div>
           </div>
           <div>
-          <h1 className="text-center lg:text-left font-bold text-xl">
+          <h1 className="text-center lg:text-left mt-5 mb-3 font-bold text-xl">
               LINKS
             </h1>
             <div  className="">
             <ul
-              className="flex flex-col gap-2 text-lg font-semibold text-center lg:text-left"
+              className="flex flex-col gap-1    text-lg font-semibold text-center lg:text-left"
               data-aos="fade-up"
             >
-              <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
+              <Link to={'/all-services'}><li className="hover:text-gray-800 transition duration-300 cursor-pointer">
                 Service
-              </li>
-              <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
+              </li></Link>
+              <Link to={'/about-us'}><li className="hover:text-gray-800 transition duration-300 cursor-pointer">
                 About Us
-              </li>
-              <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
+              </li></Link>
+              <Link to={'/'}> <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
                 News
-              </li>
-              <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
+              </li></Link>
+              <Link to={'/contact-us'}><li className="hover:text-gray-800 transition duration-300 cursor-pointer">
                 FAQ
-              </li>
-              <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
-                Global Office
-              </li>
+              </li></Link>
+              <Link to={'/'}><li className="hover:text-gray-800 transition duration-300 cursor-pointer">
+                privacy
+              </li></Link>
+              
+              
+             
+              
+              
             </ul>
             </div>
           </div>
 
-          <div className="space-y-4 ml-5" data-aos="fade-left">
+          <div className="space-y-4 " data-aos="fade-left">
             <h1 className="text-center lg:text-left font-bold text-xl">
               OUR MAIN OFFICE
             </h1>

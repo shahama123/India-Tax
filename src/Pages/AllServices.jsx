@@ -4,6 +4,7 @@ import Card from "../Components/Card";
 import { services } from "../assets/Services";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import BackButton from "../Components/BackButton";
 
 const AllServices = () => {
   const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
@@ -25,26 +26,19 @@ const AllServices = () => {
   };
 
   return (
-    <div className="mx-32 mb-20">
+    <div className="mx-32 my-20">
       <div>
         <h1
           data-aos="fade-zoom-in"
           data-aos-easing="ease-in-back"
           data-aos-delay="100"
           data-aos-offset="0"
-          className="text-3xl mb-10"
+          className="text-center font-semibold text-4xl mb-10"
         >
-          <Title
-            text1={"Our"}
-            text2={"Services"}
-            description={
-              "We provides GST filing software for accurate GST filing, reconciliation, and claiming ITC."
-            }
-          />
+          Our Services
         </h1>
       </div>
 
-     
       <div className="my-12 flex justify-center items-center">
         <input
           type="text"
@@ -63,7 +57,7 @@ const AllServices = () => {
         data-aos-easing="ease-in-back"
         data-aos-delay="700"
         data-aos-offset="0"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 mb-1"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mb-1"
       >
         {filteredServices.map((service) => (
           <Card
@@ -74,6 +68,9 @@ const AllServices = () => {
             subservices={service.subservices}
           />
         ))}
+      </div>
+      <div className="flex justify-start  mt-10">
+        <BackButton/>
       </div>
     </div>
   );

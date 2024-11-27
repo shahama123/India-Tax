@@ -12,7 +12,7 @@ const Card = ({ id, text, description, photo_url, subservices }) => {
   return (
     <div className="flex gap-5 border items-center rounded bg-[#f0e8e6]  shadow-lg  px-3 py-3  transition duration-300 ease-in-out transform hover:scale-105">
       <div className="w-1/3">
-        <div className="border border-blue-900 flex items-center justify-center">
+        <div className="border  flex items-center justify-center">
           <img
             src={photo_url}
             alt={text}
@@ -28,7 +28,7 @@ const Card = ({ id, text, description, photo_url, subservices }) => {
         {/* <p>{subservices}</p> */}
         <button
           onClick={handleReadMore}
-          className="mt-4 bg-[#82c1cf] text-white py-2 px-6  rounded hover:bg-blue-600 focus:outline-none transition duration-300"
+          className="mt-4 bg-[#82c1cf] text-white py-2 px-6  rounded hover:bg-[#69adbd] focus:outline-none transition duration-300"
         >
           <FaArrowRight />
         </button>

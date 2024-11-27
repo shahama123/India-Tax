@@ -10,7 +10,7 @@ const FaqCard = ({ question, answer, aosDelay }) => {
 
   return (
     <div
-      className="border rounded-2xl w-[40rem] mt-5 px-5 py-2 bg-white"
+      className="border rounded-2xl w-[50rem] mt-5 px-5 py-2 bg-white"
       data-aos="fade-up" // Animation on scroll
       data-aos-delay={aosDelay} // Delay based on the index for sequential animation
     >

@@ -17,10 +17,11 @@ const NavBar = () => {
   return (
     <div>
     <div className="flex items-center justify-between px-10 py-2 fixed top-0 z-50 w-full bg-[#416068] text-white">
+      <NavLink to={'/'}>
       <div className="bg-[#f1f0e8]  px-3 pr-4">
         <img className="w-32 pb-2" src={assets.logo} alt="logo-image" />
       </div>
-
+      </NavLink>
       <div>
         <ul className="flex gap-5 relative">
           <NavLink to={"/"}>
@@ -52,11 +53,10 @@ const NavBar = () => {
             </ul>
           </li>
 
-          <NavLink to={"/consultant"}></NavLink>
-          <NavLink to={"/aboutus"}>
+          <NavLink to={"/about-us"}>
             <li className="hover:text-[#f8f0c3] cursor-pointer text-lg">About Us</li>
           </NavLink>
-          <NavLink to={"/contactus"}>
+          <NavLink to={"/contact-us"}>
             <li className="hover:text-[#f8f0c3] cursor-pointer text-lg">Contact Us</li>
           </NavLink>
           <NavLink to={"/careers"}>
@@ -66,8 +66,8 @@ const NavBar = () => {
       </div>
 
       <div>
-        <NavLink to={"/consultantlist"}>
-          <button className="hover:text-[#f8f0c3] bg-[#f1f0e8] text-gray-800 p-3 rounded-md flex items-center gap-2 cursor-pointer text-lg">
+        <NavLink to={"/consultant-list"}>
+          <button className="hover:scale-105 bg-[#f1f0e8] text-gray-800 p-3 rounded-md flex items-center gap-2 cursor-pointer text-lg">
             <SlCalender />
             Book An Appointment
           </button>

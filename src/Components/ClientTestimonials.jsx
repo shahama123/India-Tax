@@ -36,9 +36,7 @@ const ClientTestimonials = () => {
                   src={review.image}
                   alt={review.name}
                 />
-                {/* Review Text */}
                 <p className="text-gray-700 text-lg italic mb-4">{`"${review.text}"`}</p>
-                {/* Reviewer Info */}
                 <div className="info">
                   <div className="rating flex justify-center mb-2 text-yellow-400 text-xl">
                     <span className="star">&#9733;</span>
