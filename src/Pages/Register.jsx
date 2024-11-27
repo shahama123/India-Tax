@@ -101,12 +101,20 @@ const Register = () => {
           <form className="grid grid-cols-2 gap-5" onSubmit={handleSubmit}>
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="100"
+               data-aos-offset="0"
                 htmlFor="first-name"
                 className="block text-gray-700 font-medium mb-2"
               >
                 First Name <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="100"
+               data-aos-offset="0"
                 id="first-name"
                 type="text"
                 placeholder="Enter your first name"
@@ -119,12 +127,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="200"
+               data-aos-offset="0"
                 htmlFor="second-name"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Second Name <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="200"
+               data-aos-offset="0"
                 id="second-name"
                 type="text"
                 placeholder="Enter your second name"
@@ -137,12 +153,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="300"
+               data-aos-offset="0"
                 htmlFor="email"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Email ID <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="300"
+               data-aos-offset="0"
                 id="email"
                 type="email"
                 placeholder="Enter your email"
@@ -155,12 +179,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="400"
+               data-aos-offset="0"
                 htmlFor="mobile-number"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Mobile Number <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="400"
+               data-aos-offset="0"
                 id="mobile-number"
                 type="text"
                 placeholder="Enter your mobile number"
@@ -173,12 +205,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="500"
+               data-aos-offset="0"
                 htmlFor="gender"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Gender <span className="text-red-500">*</span>
               </label>
               <select
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="500"
+               data-aos-offset="0"
                 id="gender"
                 className="border rounded px-5 py-2 border-[#7fb2dc] w-full"
                 value={gender}
@@ -196,12 +236,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="600"
+               data-aos-offset="0"
                 htmlFor="house-name"
                 className="block text-gray-700 font-medium mb-2"
               >
                 House/Flat Name <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="600"
+               data-aos-offset="0"
                 id="house-name"
                 type="text"
                 placeholder="Enter house/flat name"
@@ -214,12 +262,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="700"
+               data-aos-offset="0"
                 htmlFor="street-name"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Street Name <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="700"
+               data-aos-offset="0"
                 id="street-name"
                 type="text"
                 placeholder="Enter street name"
@@ -232,12 +288,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="800"
+               data-aos-offset="0"
                 htmlFor="locality"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Locality <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="800"
+               data-aos-offset="0"
                 id="locality"
                 type="text"
                 placeholder="Enter locality"
@@ -250,12 +314,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="900"
+               data-aos-offset="0"
                 htmlFor="pin-code"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Pin Code <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="900"
+               data-aos-offset="0"
                 id="pin-code"
                 type="text"
                 placeholder="Enter pin code"
@@ -268,12 +340,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1000"
+               data-aos-offset="0"
                 htmlFor="district"
                 className="block text-gray-700 font-medium mb-2"
               >
                 District <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1000"
+               data-aos-offset="0"
                 id="district"
                 type="text"
                 placeholder="Enter district"
@@ -286,12 +366,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1100"
+               data-aos-offset="0"
                 htmlFor="state"
                 className="block text-gray-700 font-medium mb-2"
               >
                 State <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1100"
+               data-aos-offset="0"
                 id="state"
                 type="text"
                 placeholder="Enter state"
@@ -304,12 +392,20 @@ const Register = () => {
 
             <div>
               <label
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1200"
+               data-aos-offset="0"
                 htmlFor="country"
                 className="block text-gray-700 font-medium mb-2"
               >
                 Country <span className="text-red-500">*</span>
               </label>
               <input
+               data-aos="fade-zoom-in"
+               data-aos-easing="ease-in-back"
+               data-aos-delay="1200"
+               data-aos-offset="0"
                 id="country"
                 type="text"
                 placeholder="Enter country"
@@ -325,7 +421,7 @@ const Register = () => {
             <button
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
-              data-aos-delay=""
+              data-aos-delay="1300"
               data-aos-offset="0"
               type="submit"
               className="bg-[#7fb2dc] hover:bg-white border hover:border-[#7fb2dc] text-white hover:text-[#7fb2dc] px-10 py-3 rounded"
@@ -340,7 +436,7 @@ const Register = () => {
         <div
           data-aos="fade-zoom-in"
           data-aos-easing="ease-in-back"
-          data-aos-delay="100"
+          data-aos-delay="1300"
           data-aos-offset="0"
           className="bg-gray-200 text-center py-10 space-y-2 "
         >
