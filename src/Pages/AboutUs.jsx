@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { assets } from "../assets/assets";
-import image from "../assets/company.gif";
+import image from "../assets/Company.gif";
 import image2 from "../assets/Contactus.gif";
 import "aos/dist/aos.css";
 import Aos from "aos";
