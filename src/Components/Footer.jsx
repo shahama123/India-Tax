@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-          <h1 className="text-center lg:text-left mt-5 mb-3 font-bold text-xl">
+          <h1 className="text-center lg:text-left mt-1 mb-6 font-bold text-xl">
               LINKS
             </h1>
             <div  className="">
@@ -75,7 +75,7 @@ const Footer = () => {
                 Service
               </li></Link>
               <Link to={'/about-us'}><li className="hover:text-gray-800 transition duration-300 cursor-pointer">
-                About Us
+                About
               </li></Link>
               <Link to={'/'}> <li className="hover:text-gray-800 transition duration-300 cursor-pointer">
                 News
